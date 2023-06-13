@@ -15,6 +15,8 @@
     />
 
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script defer src="./js/script.js"></script>
   </head>
 
   <body>
@@ -24,6 +26,9 @@
           <a href="#" class="header__logo">
             <img src="./images/logo.png" alt="" />
           </a>
+          <button class="hamburger-menu">
+            <div class="menu__bar"></div>
+          </button>
           <nav class="header__nav">
             <ul class="nav__list">
               <li class="nav__item">
@@ -42,11 +47,89 @@
                 <a href="#" class="nav__link">Contact Us</a>
               </li>
             </ul>
-            <button class="btn">Buy Now</button>
+            <button class="btn nav__btn">Buy Now</button>
           </nav>
         </div>
       </section>
-      <section class=""></section>
+      <section class="header__hero hero">
+        <div class="hero__wrapper wrapper">
+          <article class="hero__content">
+            <h5 class="hero__subtitle">Sweet fun, full of milk.</h5>
+            <h1 class="hero__title">
+              Feel inside cold with our delicious
+              <span class="text-accent">ice-cream.</span>
+            </h1>
+            <p class="hero__details">
+              Some food has looked so awful that it's looked like something that
+              the dog's brought home, yet after one mouthful I've been left
+              eating my thoughts, my words.
+            </p>
+            <button class="btn">Buy Now</button>
+          </article>
+          <article class="hero__images">
+            <img class="hero__ice-cream" src="./images/ice-cream.png" alt="" />
+            <img class="hero__splash" src="./images/splash.png" alt="" />
+          </article>
+        </div>
+      </section>
     </header>
+    <main>
+      <section class="features">
+        <div class="wrapper features__wrapper">
+          <article class="feature">
+            <img
+              class="img__fuature"
+              src="./images/feature-shipping.png"
+              alt=""
+            />
+            <h5 class="feature__heading">Free Shipping</h5>
+            <p class="feature__p">
+              Last Chance! Free shipping on all orders ends today.
+            </p>
+          </article>
+          <article class="feature">
+            <img class="img__fuature" src="./images/feature-quick.png" alt="" />
+            <h5 class="feature__heading">Quick Packaging</h5>
+            <p class="feature__p">
+              Last Chance! Free shipping on all orders ends today.
+            </p>
+          </article>
+          <article class="feature">
+            <img class="img__fuature" src="./images/feature-money.png" alt="" />
+            <h5 class="feature__heading">100% Money Back</h5>
+            <p class="feature__p">
+              Last Chance! Free shipping on all orders ends today.
+            </p>
+          </article>
+          <article class="feature">
+            <img
+              class="img__fuature"
+              src="./images/feature-delivery.png"
+              alt=""
+            />
+            <h5 class="feature__heading">Fast Delivery</h5>
+            <p class="feature__p">
+              Last Chance! Free shipping on all orders ends today.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="trending">
+        <div class="wrapper trending__wrapper">
+          <div class="text__trending">
+            <h3 class="brown__sugar">Brown Sugar Oatmea</h3>
+            <h5 class="together__trending">
+              Together with McDonald’s, Burger King has grown to become
+              synonymous with burgers in the US.Together with McDonald’s, Burger
+              King has grown to become synonymous.
+            </h5>
+            <button class="btn">See Details</button>
+          </div>
+          <div class="ice-cream__trending">
+            <img src="./images/trending-img.png" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

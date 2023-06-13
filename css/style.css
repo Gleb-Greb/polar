@@ -1,6 +1,8 @@
 :root {
+  --secondary: #f2ceda;
   --primary: #d23166;
   --white: #e5e5e5;
+  --black: #0f0101;
 }
 
 * {
@@ -37,12 +39,21 @@ button {
 
 body {
   color: rgba(0, 0, 0, 0.6);
+  height: 2000px;
+}
+
+body.clipped {
+  overflow: hidden;
 }
 
 .wrapper {
   max-width: 1140px;
   margin-inline: auto;
   padding-inline: 10px;
+}
+
+.text-accent {
+  color: var(--primary);
 }
 
 .btn {
@@ -54,9 +65,17 @@ body {
 }
 
 .header {
+  background-color: var(--secondary);
+  min-height: 100vh;
 }
 
 .header__navigation {
+}
+
+.header__navigation.fixed {
+  position: fixed;
+  inset: 0;
+  bottom: auto;
 }
 
 .navigation__wrapper {
@@ -68,18 +87,6 @@ body {
 
 .header__logo {
   flex-grow: 1;
-}
-
-.header__num {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-
-  color: #150101;
-
-  opacity: 0.6;
 }
 
 .header__nav {
@@ -94,5 +101,221 @@ body {
   gap: 40px;
 }
 
-.nav__item {
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__nav.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* max-width: 475px; */
+    z-index: 2;
+    background-color: var(--white);
+    left: 0;
+    top: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+
+  .nav__link {
+    font-size: 24px;
+  }
+
+  .nav__btn {
+    font-size: 24px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .menu__bar,
+  .menu__bar::before,
+  .menu__bar::after {
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    left: 0;
+    background-color: var(--black);
+    transition: 0.5s;
+  }
+
+  .menu__bar::before,
+  .menu__bar::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+  }
+
+  .menu__bar::before {
+    transform: translateY(-10px);
+  }
+
+  .menu__bar::after {
+    transform: translateY(10px);
+  }
+
+  .hamburger-menu.active {
+  }
+
+  .hamburger-menu.active .menu__bar {
+    width: 0;
+  }
+
+  .hamburger-menu.active .menu__bar::before {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .hamburger-menu.active .menu__bar::after {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+/* 
+  hero
+*/
+
+.hero {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  /* overflow-x: hidden; */
+}
+
+.hero__wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero__content {
+  flex-basis: 50%;
+}
+
+.hero__subtitle {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--black);
+  letter-spacing: 0.1em;
+}
+
+.hero__ice-cream {
+}
+
+.hero__splash {
+  position: absolute;
+  bottom: -15%;
+  left: -25%;
+  left: 50%;
+
+  transform: translate(-50%, -25%) scale(1.5);
+}
+
+.hero__images {
+  position: relative;
+  flex-basis: 50%;
+  overflow: hidden;
+}
+
+.features {
+  padding-block: 6rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 250px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+}
+
+.features__wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img__fuature {
+  padding-top: 33px;
+  padding-bottom: 24px;
+}
+
+.feature__heading {
+  padding-bottom: 9px;
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.feature__p {
+  text-align: center;
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-bottom: 27px;
+}
+
+.trending {
+  background-color: var(--secondary);
+}
+
+.trending__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.trending__wrapper > * {
+  flex-basis: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.brown__sugar {
+  font-family: "Hind Madurai";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44.2px;
+  line-height: 49px;
+  color: #150101;
+}
+
+.together__trending {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  color: #150101;
+
+  opacity: 0.6;
 }
